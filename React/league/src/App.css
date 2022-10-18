@@ -1,0 +1,63 @@
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+
+}
+
+button{
+  margin-right: 15px;
+  background: #f24563;
+  padding: 1px;
+}
+
+
+.datas{
+  display: flex;
+  width: 70%;
+  padding: 1.5rem;
+  flex-direction: column;
+  gap:4px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.summoner{
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.summoner-level{
+  font-size: 1.1rem;
+  font-weight: normal;
+  border-radius: 100rem;
+  padding: 3px;
+  text-align: center;
+}
+
+.level{
+  border-radius: 10px;
+}
+
+img{
+  border-radius: 20px;
+}
+img:hover{
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+
