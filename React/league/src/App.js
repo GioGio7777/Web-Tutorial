@@ -2,21 +2,13 @@ import React,{useState} from "react";
 import './App.css';
 import axios from 'axios';
 import { usePalette } from 'react-palette'
-import hexToRgba from 'hex-to-rgba';
-
-
-
-
+import hexToRgba from "hex-to-rgba";
 
 function App() {
     const [searchText,setSearchText] = useState("");
     const [playerData,setplayerData] = useState({});
-    const [colors,setColors] = useState([]);
     const { data, loading, error } = usePalette(`http://ddragon.leagueoflegends.com/cdn/12.19.1/img/profileicon/${playerData.profileIconId}.png`)
 
-
-
-    console.log(colors)
 
     const API_KEY = process.env.REACT_APP_RIOT_API
 
@@ -26,17 +18,22 @@ function App() {
         // handle the API call
         axios.get(APICallString).then(async (res) => {
             await setplayerData(res.data)
-            console.log(res.data)
-
         }).catch((err)=>{
             console.log(err)
         })
-       setTimeout('',15000)
-       console.log(hexToRgba(data.lightVibrant))
-
-
-       setColors(hexToRgba(data))
     }
+
+     const dataHover = () => {
+        const dataDiv = document.getElementsByClassName("data")[0]
+         dataDiv.style.boxShadow = `-3px -2px 5px 0 ${hexToRgba(data.lightVibrant,0.75)}`
+         dataDiv.style.transition ="ease-in-out 0.65s"
+     }
+
+     const mouseLeave = () => {
+         const dataDiv = document.getElementsByClassName("data")[0]
+         dataDiv.style.boxShadow = "-3px -2px 5px 0 rgba(0,0,0,0.75)"
+         dataDiv.style.transition ="ease-in-out 0.65s"
+     }
 
     return (
     <div className="App">
@@ -47,15 +44,16 @@ function App() {
       </div>
 
         {JSON.stringify(playerData) !== '{}' ?
-            <div className="datas" style={{background: `linear-gradient(180deg, ${data.darkVibrant} 10%, ${data.vibrant} 80%, ${data.lightVibrant} 100%)`}}>
+            <div className="data" onMouseLeave={() => mouseLeave()} onMouseEnter={() => dataHover()} style={{background: `linear-gradient(180deg, ${data.darkVibrant} 10%, ${data.vibrant} 80%, ${data.lightVibrant} 100%)`}}>
                 <div className="icon">
                     <img alt="profile" width="100" height="100" src={"http://ddragon.leagueoflegends.com/cdn/12.19.1/img/profileicon/" + playerData.profileIconId+ ".png"}/>
                 </div>
-                <h2 >Summoner Name: <span className="summoner">{playerData.name}</span></h2>
-                <div className="level">
-                    <h2 >Summoner Level: <span className="summoner-level" style={{border:`2.34px solid ${data.muted}`}}>{playerData.summonerLevel}</span></h2>
+                <div className="summoner-info">
+                    <h2 >Summoner Name: <span className="summoner">{playerData.name}</span></h2>
+                    <div className="level">
+                        <h2 >Summoner Level: <span className="summoner-level" style={{border:`2.34px solid ${data.muted}`}}>{playerData.summonerLevel}</span></h2>
+                    </div>
                 </div>
-
             </div> :
             <><p>We have no player data</p></>
         }
