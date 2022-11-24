@@ -75,5 +75,11 @@ Responsive Dashboard:[Chart JS Integration | Responsive Admin Dashboard using Ht
 
 ---
 
+---
+
+## 18-Glass Sidebar:[Responsive Glass Sidebar using CSS & JavaScript](https://www.youtube.com/watch?v=hAnv1NEE7j8&ab_channel=CODEWITHHOSSEIN)
+
+---
+
 
 
