@@ -69,5 +69,11 @@ Responsive Dashboard:[Chart JS Integration | Responsive Admin Dashboard using Ht
 
 ---
 
+---
+
+## 17-Parallax Scroll:[This Simple Trick Makes Your Website 83% Better Looking](https://www.youtube.com/watch?v=mxHoPYFsTuk&ab_channel=WebDevSimplified)
+
+---
+
 
 
