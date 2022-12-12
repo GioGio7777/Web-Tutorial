@@ -81,5 +81,16 @@ Responsive Dashboard:[Chart JS Integration | Responsive Admin Dashboard using Ht
 
 ---
 
+---
+
+## 19-Parallax:[Basic Parallax Website With HTML & CSS](https://www.youtube.com/watch?v=JttTcnidSdQ)
+
+---
+
+---
+
+## 20-HSC:[How to Make a Website Using HTML CSS & JS | Website Design Tutorial | Video Background Landing Page](https://www.youtube.com/watch?v=wPEm1ran0iM)
+
+---
 
 
